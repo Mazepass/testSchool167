@@ -8,6 +8,8 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+
 	<groupId>ru.mazepa.security</groupId>
 	<artifactId>FirsSecurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -59,6 +61,7 @@
 		</dependency>
 	</dependencies>
 
+
 	<build>
 		<plugins>
 			<plugin>
@@ -67,5 +70,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

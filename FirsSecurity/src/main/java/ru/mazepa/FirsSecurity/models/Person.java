@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name = "person")
@@ -17,8 +16,57 @@ public class Person {
 
     @NotEmpty(message = "Заполните данную область")
     @Size(min = 5, max = 12, message = "Имя должно быть от 5 до 12 символов длиной")
+    @Column(name = "Name")
+    private String Name;
+
+
+
     @Column(name = "username")
+    @NotEmpty(message = "Заполните данную область")
     private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", Name='" + Name + '\'' +
+                ", username='" + username + '\'' +
+                ", Surname='" + Surname + '\'' +
+                ", yearOfBirth=" + yearOfBirth +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    public Person() {
+
+    }
+
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
+
+    @NotEmpty(message = "Заполните данную область")
+    @Size(min = 5, max = 12, message = "Имя должно быть от 5 до 12 символов длиной")
+    @Column(name = "Surname")
+    private String Surname;
 
 
     @Column(name = "year_of_birth")
@@ -41,23 +89,10 @@ public class Person {
         this.role = role;
     }
 
-    public Person() {
 
-    }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", yearOfBith=" + yearOfBirth +
-                ", password='" + password + '\'' +
-                '}';
-    }
+    public Person(String username, String surname, int yearOfBirth) {
 
-    public Person( String username, int yearOfBirth) {
-
-        this.username = username;
         this.yearOfBirth = yearOfBirth;
 
     }
@@ -70,12 +105,8 @@ public class Person {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public int getYearOfBirth() {
