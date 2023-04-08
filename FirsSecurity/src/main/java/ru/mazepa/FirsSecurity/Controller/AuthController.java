@@ -41,6 +41,7 @@ public class AuthController {
             return "/auth/registration" ;
 
         registrationService.register(person);
+        System.out.println("Chcked");
 
         return "redirect:/auth/login";
 

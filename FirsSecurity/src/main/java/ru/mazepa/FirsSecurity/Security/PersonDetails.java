@@ -37,7 +37,6 @@ public class PersonDetails implements UserDetails {
         return null;
     }
 
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
